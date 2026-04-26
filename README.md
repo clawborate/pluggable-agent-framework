@@ -18,15 +18,24 @@ PAF solves this by introducing a clear boundary:
 
 ```
 pluggable-agent-framework/
-├── agents/                           Community-contributed agent definitions
-│   ├── coordinator/
-│   │   ├── agent.json                Metadata: name, role, description, version
+├── agents/                           Agent definitions (recursive discovery)
+│   ├── _skeleton/                    ← Copy this to create a new agent
+│   │   ├── expert.json               Metadata: name, role, description, version
 │   │   ├── IDENTITY.md               Who I am, what I do
 │   │   ├── SOUL.md                   Values, communication style
 │   │   └── MEMORY.md                 Initial memory scaffold
-│   ├── developer/
-│   ├── designer/
-│   └── tester/
+│   └── sample/                       Example agents for reference
+│       ├── coordinator/
+│       ├── developer/
+│       ├── designer/
+│       └── tester/
+│
+├── teams/                            Team composition templates (recursive discovery)
+│   ├── _skeleton/                    ← Copy this to create a new team
+│   │   ├── template.json             Agent roster, platform reference
+│   │   └── PURPOSE.md                Team mission and workflow
+│   └── sample/                       Example teams for reference
+│       └── ace/                      4-role development team
 │
 ├── platforms/                        Platform-specific runtime definitions
 │   └── openclaw/
@@ -40,11 +49,6 @@ pluggable-agent-framework/
 │           │   └── 70-edit-rules.md.tmpl
 │           └── USER.md.tmpl          Template for agent-maintained user notes
 │
-├── teams/                            Team composition templates
-│   └── ace/
-│       ├── template.json             Agent roster, platform reference
-│       └── PURPOSE.md                Team mission and workflow
-│
 └── assembler/                        Python library
     ├── assemble.py                   Glob partials → render → concatenate
     ├── expert_loader.py              Load agent definitions with fallback
@@ -56,17 +60,17 @@ pluggable-agent-framework/
 
 ### 1. Define an Agent
 
-Create a directory under `agents/` with three Markdown files:
+Copy `agents/_skeleton/` and fill in the files (see `agents/sample/` for examples):
 
 ```
-agents/security-auditor/
-├── agent.json
+agents/my-group/security-auditor/
+├── expert.json        Metadata: id, version, name, role, description
 ├── IDENTITY.md        "I am a security auditor. I review code for vulnerabilities..."
 ├── SOUL.md            "I am thorough but pragmatic. I prioritise impact over volume..."
 └── MEMORY.md          ""
 ```
 
-That's it. No infrastructure knowledge required. No tool configurations, no file paths, no protocol definitions.
+That's it. No infrastructure knowledge required. No tool configurations, no file paths, no protocol definitions. Agents can be nested in subdirectories — the framework discovers them recursively.
 
 ### 2. Compose a Team
 

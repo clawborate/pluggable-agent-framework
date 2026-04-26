@@ -1,0 +1,29 @@
+{
+  "id": "my-team",
+  "runtime": "openclaw",
+  "version": "1.0.0",
+  "display_name": "My Team",
+  "description": "One-sentence description of what this team does.",
+  "default_team_name": "My Team",
+  "changelog": [
+    { "version": "1.0.0", "date": "YYYY-MM-DD", "changes": "Initial release" }
+  ],
+  "agents": [
+    {
+      "id_suffix": "lead",
+      "expert_id": "coordinator",
+      "name": "Agent Name",
+      "role": "Agent Role",
+      "description": "What this agent does in the team",
+      "is_master": true
+    },
+    {
+      "id_suffix": "worker",
+      "expert_id": "my-agent",
+      "name": "Agent Name",
+      "role": "Agent Role",
+      "description": "What this agent does in the team",
+      "is_master": false
+    }
+  ]
+}

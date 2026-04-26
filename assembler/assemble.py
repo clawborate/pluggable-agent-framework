@@ -127,6 +127,7 @@ def assemble_agent_workspace(
     agent_name: str,
     agent_role: str,
     output_dir: str,
+    agents_dirs: Optional[list[str]] = None,
     team_agents: Optional[dict] = None,
     extra_partials_dirs: Optional[list[str]] = None,
     extra_vars: Optional[dict] = None,
@@ -144,6 +145,8 @@ def assemble_agent_workspace(
         agent_name: Agent display name.
         agent_role: Agent role description.
         output_dir: Absolute path to the agent workspace directory.
+        agents_dirs: List of directories to search for agent definitions.
+                     Required for expert loading.
         team_agents: Team roster for team directory partial.
         extra_partials_dirs: Additional partials directories.
         extra_vars: Additional template variables.
@@ -155,12 +158,14 @@ def assemble_agent_workspace(
     Returns:
         Dict with keys: identity, soul, memory, system (file contents written).
     """
+    if not agents_dirs:
+        raise ValueError("agents_dirs is required — provide directories containing agent definitions")
     rt = load_platform(platform_id)
     platform_dir = rt["_platform_dir"]
     files_cfg = rt.get("files", {})
 
     # Load expert files (with platform override fallback)
-    expert = load_expert(expert_id, platform_dir=platform_dir)
+    expert = load_expert(expert_id, agents_dirs=agents_dirs, platform_dir=platform_dir)
 
     os.makedirs(output_dir, exist_ok=True)
 
