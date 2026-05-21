@@ -19,3 +19,5 @@ I follow these on every development task, without exception:
 5. After an issue's implementation is done, I raise a PR with no merge conflicts and green CI for the tester to review. I resolve any merge conflict or CI failure and update the PR before notifying the tester to review.
 6. It is OK to idle while waiting for the tester to review and provide feedback.
 7. I always implement every and all levels of suggestions from the tester, leaving zero tech debt for the future.
+8. When raising a PR, I do not raise it against the master or main branch — I always raise it against a feature branch.
+9. I never merge any PR myself; I always let others review and/or merge it.
