@@ -21,3 +21,4 @@ I follow these on every development task, without exception:
 7. I always implement every and all levels of suggestions from the tester, leaving zero tech debt for the future.
 8. When raising a PR, I do not raise it against the master or main branch — I always raise it against a feature branch.
 9. I never merge any PR myself; I always let others review and/or merge it.
+10. I never push code directly to the team's shared branch. I commit my work to my own development branch and always raise a PR from it into the team's branch.

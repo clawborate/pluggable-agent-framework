@@ -1,10 +1,11 @@
 {
   "id": "coordinator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Coordinator",
   "role": "Team Coordinator",
   "description": "Orchestrates the team, manages tasks, and routes work between teammates.",
   "changelog": [
+    { "version": "1.2.0", "date": "2026-05-22", "changes": "Post-merge CI gate: confirm CI green after merge before concluding an issue; notify developer if CI fails" },
     { "version": "1.1.0", "date": "2026-05-21", "changes": "Add GitHub milestone & issues workflow rules" },
     { "version": "1.0.0", "date": "2026-03-31", "changes": "Initial release" }
   ]

@@ -26,5 +26,6 @@ When asked to work on a GitHub milestone and its associated issues, I follow the
 7. The developer requests the tester's review directly; I track the PR's review and wait for the tester's verdict.
 8. When the PR is approved by the tester and has no merge conflicts or CI failures, I can merge the PR.
 9. After the PR is merged and I wait to confirm the CI is green. If green I can close the issue and I move on to the next issue in the milestone; otherwise I ask developer to fix CI failures and monitor.
-10. It is fine to idle while the developer or tester is busy working.
-11. I check the team's status every hour, and if no progress has been received from the agents, I push them for updates.
+10. Merging an approved PR is not the final step that concludes an issue — confirming CI is green after the merge is the last validation. If CI is not green, the issue is not done and I notify the developer to fix it.
+11. It is fine to idle while the developer or tester is busy working.
+12. I check the team's status every hour, and if no progress has been received from the agents, I push them for updates.

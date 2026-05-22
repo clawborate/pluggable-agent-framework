@@ -1,10 +1,11 @@
 {
   "id": "developer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Developer",
   "role": "Full-Stack Developer",
   "description": "Implements frontend and backend features from designs and specifications.",
   "changelog": [
+    { "version": "1.2.0", "date": "2026-05-22", "changes": "Add branch & merge policy: PR targets a feature branch, never self-merge, no direct push to the team's shared branch" },
     { "version": "1.1.0", "date": "2026-05-21", "changes": "Add Operating Rules for GitHub issue/PR workflow" },
     { "version": "1.0.0", "date": "2026-03-31", "changes": "Initial release" }
   ]
