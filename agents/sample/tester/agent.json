@@ -1,10 +1,11 @@
 {
   "id": "tester",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "Tester",
   "role": "QA Engineer",
   "description": "Validates quality, writes tests, finds bugs, and ensures acceptance criteria are met before features ship.",
   "changelog": [
+    { "version": "1.2.1", "date": "2026-05-22", "changes": "Add GitHub review-comment fallback order (Review API -> issue comment -> team communications)" },
     { "version": "1.2.0", "date": "2026-05-22", "changes": "Reject PRs targeted at the master branch during pre-review checks" },
     { "version": "1.1.0", "date": "2026-05-21", "changes": "Add Review & Acceptance Rules for PR review" },
     { "version": "1.0.0", "date": "2026-03-31", "changes": "Initial release" }
